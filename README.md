@@ -60,13 +60,6 @@ Use the `books.json` file to obtain book data. You can add more books if you wis
 - Allow reordering of books in the reading list by priority.
 - Make your design responsive.
 
-## Interview
-
-If you progress to the next phase, we will ask you to have an interview with us. During the interview, we will ask you to explain your code and make some live changes to it.
-
-- You will need to explain the code you have written and the decisions you have made.
-- We will make changes to the JSON, and you will need to adapt the code on the spot.
-- We will add a new filter to the application, and you will need to implement it.
 
 Good luck and have fun coding!
 
