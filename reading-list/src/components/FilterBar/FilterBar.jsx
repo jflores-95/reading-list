@@ -1,7 +1,14 @@
 import React from 'react'
+import * as Styled from './FilterBar.styled'
 
-export default function FilterBar() {
+export default function FilterBar({
+  books,
+  handleFilter = () => {}
+}) {
+ 
   return (
-    <div>FilterBar</div>
+   <Styled.Container>
+     <button onClick={handleFilter(true)}>x</button>
+   </Styled.Container>
   )
 }

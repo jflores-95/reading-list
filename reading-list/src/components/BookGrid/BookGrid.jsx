@@ -1,12 +1,20 @@
-import React from 'react'
+import React from "react";
+import BookCard from "../BookCard/BookCard";
+import * as Styled from "./BookGrid.styled";
 
-// this is for rendering books only
-export default function BookGrid({books}) {
+export default function BookGrid({ books }) {
+
   return (
     <>
-      {books?.map((book) => {
-        return ( <><div key={book.book.title} >{book.book.title}</div></>)
-      })}
+      <Styled.Container>
+        {books?.map((book) => {
+          return (
+            <>
+              <BookCard book={{ ...book.book }} />
+            </>
+          );
+        })}
+      </Styled.Container>
     </>
-  )
+  );
 }
