@@ -1,12 +1,14 @@
-import React, { useEffect , useState} from "react";
+import React, { useLayoutEffect, useState} from "react";
 import BookGrid from "../../components/BookGrid/BookGrid.jsx";
 import FilterBar from "../../components/FilterBar/FilterBar.jsx";
 import * as Styled from "./Home.styled.js";
+import {atom, useAtom} from 'jotai'
 
+const booksAtom = atom(null)
 export const  Home = () =>{
-    const [books, setBooks] = useState();
+    const [books, setBooks] = useAtom(booksAtom);
     const [showFilter, setShowFilter] = useState(false)
-    useEffect(() => { 
+    useLayoutEffect(() => { 
        fetch('/books.json')
        .then(response => response.json())
        .then(res => {
@@ -23,12 +25,11 @@ export const  Home = () =>{
   return (
     <>
         <Styled.Header>
-            <Styled.Title>The Secret Book Club </Styled.Title>
-        </Styled.Header>    
-        <button onClick={() => handleClickShowFilter(showFilter)}>Filters</button>
+            <Styled.Title>Ladders </Styled.Title>
+        </Styled.Header>
         {showFilter && <FilterBar books={books} handleFilter={() => handleClickShowFilter}/> }
         <BookGrid books={books}/>
-      
+        
     </>
   );
 };
