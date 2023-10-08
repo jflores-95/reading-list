@@ -1,8 +1,65 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/Moderat-Bold.ttf') format('truetype');
+    }
+      
+@font-face {
+    font-family: 'Helvetica Neue Condensed';
+    src: url('/Helvetica Neue 67 Medium Condensed.otf') format('opentype');
+    }
+          
+
 body{
-    background-color: #F2F2F2;
+    background-color: #FFF;
 }
 
+h1{
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px; /* 100% */
+    letter-spacing: -0.2px;
+}
 
+h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.14px;
+}
+
+/*Body Large*/
+h3{
+    color: #0B2B2C;
+    font-family: Helvetica Neue;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 140% */
+}
+
+/*Body Medium*/
+h4{
+    color: #2C3131;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 122.222% */ 
+}
+
+h5{
+    
+    font-family: Helvetica Neue;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 22px; /* 122.222% */
+
+}
 #root {
 height: 100vh;
 width: 100vw;

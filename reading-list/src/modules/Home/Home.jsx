@@ -25,7 +25,7 @@ export const  Home = () =>{
   return (
     <>
         <Styled.Header>
-            <Styled.Title>Ladders </Styled.Title>
+            <Styled.Title>Bookloop  </Styled.Title>
         </Styled.Header>
         {showFilter && <FilterBar books={books} handleFilter={() => handleClickShowFilter}/> }
         <BookGrid books={books}/>

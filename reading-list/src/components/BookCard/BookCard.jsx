@@ -28,7 +28,9 @@ export default function BookCard({book}) {
           </div>
       </Modal>
     <Styled.Title>{book.title}</Styled.Title>
-    <Button onClick={() => {addAsFavorite(book)}}>Add as favorite</Button>
+    <Styled.Author>{book.author.name}</Styled.Author>
+
+    <Button onClick={() => {addAsFavorite(book)}}>Add to favorites</Button>
     
     </Styled.Wrapper>
      

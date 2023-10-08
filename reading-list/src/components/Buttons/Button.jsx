@@ -1,11 +1,16 @@
 import React from 'react'
+import * as Styled from './Button.styled'
 
 export default function Button({
-    type="default",
+    type="primary",
+    size="large",
+    width="fit-content",
     onClick=()=>{},
     children
 }) {
   return (
-   <button type={type} onClick={onClick}>{children}</button>
+   <Styled.Button width={width} type={type} size={size} onClick={onClick}>{children}</Styled.Button>
   )
 }
+
+
