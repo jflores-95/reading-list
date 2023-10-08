@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Cover = styled.img`
   border-bottom: 4px solid #e2e3e3;
   border-left: 4px solid #e2e3e3;
-  height: 500px;
-  width: 300px;
+  height: 300px;
+  width: 180px;
   border-radius: 0px 12px 12px 0px;
   margin-bottom: 16px;
 `;
@@ -17,6 +17,7 @@ font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: 18px; 
+margin-bottom: auto;
 `
 
 export const Title = styled.span`
@@ -30,10 +31,12 @@ export const Title = styled.span`
 `;
 
 export const Wrapper = styled.div`
+  height: 425px;
+  width: 200px;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15%;
   display: flex;
   flex-direction: column;
 `;
