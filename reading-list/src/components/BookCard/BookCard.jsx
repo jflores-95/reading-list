@@ -3,19 +3,33 @@ import * as Styled from './BookCard.styled'
 import Button from '../Buttons/Button'
 import { useAtom, atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
-import Modal from '../Modal/Modal';
+import Modal from '../Modal/Modal'; 
 
-const favoritesAtom = atomWithStorage('favoriteBooks', []);
+let favoriteBooks = JSON.parse(localStorage.getItem('favorites')) || [];
+const favoritesAtom = atomWithStorage('favorites', favoriteBooks);
+
 export default function BookCard({book}) {
   const [favorites, setFavorites] = useAtom(favoritesAtom);
   const [isOpen, setIsOpen] = useState(false);
 
   const onClickBook = () => {
-    setIsOpen(true)
+
   }
 
-  const addAsFavorite = (book) => {
-    setFavorites(prev => [...prev, book])
+  const handleFavorite = (book) => {
+      if(isFavorite(book)){
+        favoriteBooks = favoriteBooks.filter((element) => element.ISBN !== book.ISBN);
+      } else {
+        favoriteBooks.push(book);
+        favoriteBooks = [...new Set(favoriteBooks)];
+      }
+   
+     
+      setFavorites(favoriteBooks);
+  }
+
+  const isFavorite = (book) => {
+    return favoriteBooks.some((element)=> element.ISBN === book.ISBN)
   }
 
   return (
@@ -30,7 +44,9 @@ export default function BookCard({book}) {
     <Styled.Title>{book.title}</Styled.Title>
     <Styled.Author>{book.author.name}</Styled.Author>
 
-    <Button onClick={() => {addAsFavorite(book)}}>Add to favorites</Button>
+    <Button type={ isFavorite(book) ? "delete" : "primary"} 
+      onClick={() => {handleFavorite(book)}}>
+      {isFavorite(book) ? "Remove from" : "Add to " } favorites</Button>
     
     </Styled.Wrapper>
      

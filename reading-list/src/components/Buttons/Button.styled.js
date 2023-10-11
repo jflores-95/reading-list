@@ -6,11 +6,17 @@ const sizes = {
     large: "16px"
 }
 
+const buttonType = {
+    primary: "#5EDFE3", 
+    secondary: "#FFF",
+    delete: "#FF3333"
+}
+
 export const Button = styled.button`
     width: ${(props) => props.width};
     padding: 7px 16px 7px 16px;
     border: none;
-    background-color: ${(props) => (props.type === 'primary' ? '#5EDFE3' : "#FFF")};
+    background-color: ${(props) => buttonType[props.type]};
     border-radius: ${(props) => sizes[props.size]};
     color: #2C3131;
     font-family: 'Helvetica Neue';
