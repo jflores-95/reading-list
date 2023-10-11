@@ -1,4 +1,4 @@
-# 01 - Development of a Book List Application
+# 01 - Development of a Book List Application -
 
 The goal of this test is to design and implement a small web application for a book list using the tools of your choice.
 
