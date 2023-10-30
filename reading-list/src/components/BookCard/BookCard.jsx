@@ -24,7 +24,7 @@ export default function BookCard({book}) {
     <Styled.Cover onClick={() => {onClickBook(book)}} src={book.cover}></Styled.Cover>
       <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
           <div style={{border: "1px solid white"}}>
-            <h1>Hola {book.title}</h1>
+            <h1>  {book.title}</h1>
           </div>
       </Modal>
     <Styled.Title>{book.title}</Styled.Title>

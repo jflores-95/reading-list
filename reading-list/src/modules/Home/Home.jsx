@@ -7,7 +7,7 @@ import {atom, useAtom} from 'jotai'
 const booksAtom = atom(null)
 export const  Home = () =>{
     const [books, setBooks] = useAtom(booksAtom);
-    const [showFilter, setShowFilter] = useState(false)
+   
     useLayoutEffect(() => { 
        fetch('/books.json')
        .then(response => response.json())
@@ -16,18 +16,13 @@ export const  Home = () =>{
         })
     }, [])
   
-  const handleClickShowFilter = (currentFilterState) => {
-    setShowFilter(!currentFilterState)
-  }
   
-  
-
   return (
     <>
         <Styled.Header>
             <Styled.Title>Bookloop  </Styled.Title>
         </Styled.Header>
-        {showFilter && <FilterBar books={books} handleFilter={() => handleClickShowFilter}/> }
+        <FilterBar /> 
         <BookGrid books={books}/>
         
     </>
